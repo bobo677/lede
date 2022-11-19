@@ -147,6 +147,7 @@ jobs:
           
           ### THEME ###
           CONFIG_PACKAGE_luci-theme-argon=y
+          EOF
           #========
 
       - name: Make download
