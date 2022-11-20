@@ -46,7 +46,16 @@ jobs:
           sudo -E apt-get clean
 
           df -h
-
+      - name: Prepare Package
+        run: |
+          wget https://raw.githubusercontent.com/bobo677/Js/main/02_prepare_package.sh
+          /bin/bash 02_prepare_package.sh
+  
+      - name: Convert Translation
+        run: |
+          wget https://raw.githubusercontent.com/bobo677/Js/main/03_convert_translation.sh
+          /bin/bash 03_convert_translation.sh
+        
       - name: Update feeds
         run: |
           sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
